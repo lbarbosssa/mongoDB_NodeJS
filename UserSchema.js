@@ -1,15 +1,4 @@
-/**
- * depois do / é o nome do banco, caso nao tenha o mongo cria, e só aparece quando tiver dados
- */
 const mongoose = require('mongoose')
-
-//Config mongoose
-mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost/aprendendo', { useNewUrlParser: true }).then(() => {
-    console.log('Cenectado')
-}).catch((e) => {
-    console.log(e)
-})
 
 const UserSchema = mongoose.Schema({
     nome: {
@@ -35,13 +24,13 @@ const UserSchema = mongoose.Schema({
 
 mongoose.model('User', UserSchema)
 
-const User = mongoose.model('User')
+const Lucas = mongoose.model('User')
 
-new User({
-    nome: 'Karen',
-    sobrenome: 'Moraes',
-    email: 'b@b.com',
-    idade: 23,
+new Lucas({
+    nome: 'Lucas',
+    sobrenome: 'Barbosa',
+    email: 'a@a.com',
+    idade: 22,
     pais: 'Brasil'
 }).save().then(() => {
     console.log('salvou')
